@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="大二是要学java的，暑期也简单接触过java，但是过了一两个月又忘记了。然后这几天重新学了下，基于的教程是 how2j.cn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java 基础（二）">
+<meta property="og:url" content="http://http://ztq1217.top/2020/10/05/java-02/index.html">
+<meta property="og:site_name" content="Sky&#39;blog">
+<meta property="og:description" content="大二是要学java的，暑期也简单接触过java，但是过了一两个月又忘记了。然后这几天重新学了下，基于的教程是 how2j.cn">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://stepimagewm.how2j.cn/600.png">
+<meta property="og:image" content="https://stepimagewm.how2j.cn/612.png">
+<meta property="og:updated_time" content="2020-10-08T08:06:49.228Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java 基础（二）">
+<meta name="twitter:description" content="大二是要学java的，暑期也简单接触过java，但是过了一两个月又忘记了。然后这几天重新学了下，基于的教程是 how2j.cn">
+<meta name="twitter:image" content="https://stepimagewm.how2j.cn/600.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://http://ztq1217.top/2020/10/05/java-02/">
+
+
+
+
+
+  <title>java 基础（二） | Sky'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sky'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-汇总">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br>
+            
+            汇总
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://http://ztq1217.top/2020/10/05/java-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sky">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sky'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java 基础（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-05T00:00:00+08:00">
+                2020-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>大二是要学java的，暑期也简单接触过java，但是过了一两个月又忘记了。<br>然后这几天重新学了下，基于的教程是 how2j.cn</p>
+<a id="more"></a>
+<h1 id="Chap-7-类和对象"><a href="#Chap-7-类和对象" class="headerlink" title="Chap 7 类和对象"></a>Chap 7 类和对象</h1><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>如果一个变量的类型是 类 类型，而非基本类型，那么该变量又叫做引用。<br><code>new Item()</code> 创建一个对象，但是这个对象访问不到，就像他没有名字一样。<br>此时需要一个变量代表(指向)这个对象，这就需要<code>Item money = new Item()</code></p>
+<p>一个对象可以有多个引用，就像一个人可以有很多代号，指向的都是同一个对象。<br><strong>一个引用，同一时间，只能指向一个对象。</strong></p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>设计一个类的时候，可以继承其他类的内容。<br>假设<code>Item</code>类有<code>name</code> <code>price</code>两个属性<br>我们可以设计一个<code>weapon</code>类继承`item·</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Weapon</span> <span class="keyword">extends</span> <span class="title">Item</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> damage; <span class="comment">//攻击力</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Weapon infinityEdge = <span class="keyword">new</span> Weapon();</span><br><span class="line">        infinityEdge.damage = <span class="number">65</span>; <span class="comment">//damage属性在类Weapon中新设计的</span></span><br><span class="line"></span><br><span class="line">        infinityEdge.name = <span class="string">"无尽之刃"</span>;<span class="comment">//name属性，是从Item中继承来的，就不需要重复设计了</span></span><br><span class="line">        infinityEdge.price = <span class="number">3600</span>;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><p>方法的重载指的是<strong>方法名一样</strong>，但是<strong>参数类型不一样</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(name + <span class="string">" 进行了一次攻击 ，但是不确定打中谁了"</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero h1)</span> </span>&#123;</span><br><span class="line">    System.out.println(name + <span class="string">"对"</span> + h1.name + <span class="string">"进行了一次攻击 "</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero h1, Hero h2)</span> </span>&#123;</span><br><span class="line">    System.out.println(name + <span class="string">"同时对"</span> + h1.name + <span class="string">"和"</span> + h2.name + <span class="string">"进行了攻击 "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参数数量是可变的，当有很多很多参数时，可以设计采用下面的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero... heros)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; heros.length; i++) &#123;</span><br><span class="line">        System.out.println(name + <span class="string">" 攻击了 "</span> + heros[i].name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>一般来说直接<code>Item money = new Item()</code>就能创建一个对象<br>此时<code>Item()</code>就是构造方法</p>
+<p>可以不带参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public Hero()&#123;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以带参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Item</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> money;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Item</span><span class="params">(String itemname)</span></span>&#123; </span><br><span class="line">               name = itemname;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Item wings = <span class="keyword">new</span> Item(<span class="string">"翅膀"</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>实际应用大概是直接通过参数赋初值。</p>
+<p>构造方法也可以重载，有多个参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Item</span><span class="params">(String itemname,<span class="keyword">float</span> value)</span></span>&#123; </span><br><span class="line">    name = itemname;</span><br><span class="line">    price = value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>this即代表当前对象</p>
+<p>通过this访问属性，这样参数名可以跟属性名相同。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName3</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">    <span class="comment">//name代表的是方法中的参数name</span></span><br><span class="line">    <span class="comment">//this.name代表的是类中的name属性</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果要在一个构造方法中，调用另一个构造方法，可以使用this()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//带一个参数的构造方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Hero</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"一个参数的构造方法"</span>);</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//带两个参数的构造方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Hero</span><span class="params">(String name,<span class="keyword">float</span> hp)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(name);</span><br><span class="line">    System.out.println(<span class="string">"两个参数的构造方法"</span>);</span><br><span class="line">    <span class="keyword">this</span>.hp = hp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看起来就像是套娃。</p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>把比较接近的类，规划在同一个包下</p>
+<p><code>Hero</code>,<code>ADHero</code>规划在一个包，叫做<code>charactor(角色)</code><br><code>Item</code>,<code>Weapon</code>规划在另一个包下，叫做<code>property(道具)</code><br><img src="https://stepimagewm.how2j.cn/600.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor; <span class="comment">//在最开始的地方声明该类所处于的包名</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">    String name; <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">float</span> hp; <span class="comment">//血量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用其他包下的类，必须import</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor;</span><br><span class="line"><span class="comment">//Weapon类在其他包里，使用必须进行import</span></span><br><span class="line"><span class="keyword">import</span> property.Weapon;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">    String name; <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">float</span> hp; <span class="comment">//血量</span></span><br><span class="line">    <span class="keyword">float</span> armor; <span class="comment">//护甲</span></span><br><span class="line">    <span class="keyword">int</span> moveSpeed; <span class="comment">//移动速度</span></span><br><span class="line">    <span class="comment">//装备一把武器</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">equip</span><span class="params">(Weapon w)</span></span>&#123;</span><br><span class="line">      <span class="comment">//省略</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><p>成员变量有四种修饰符<br><code>private</code> 私有的<br><code>package/friendly/default</code> 不写<br><code>protected</code> 受保护的<br><code>public</code> 公共的</p>
+<p><font color="#ff0000">红色字体</font>，表示不可行<br><img src="https://stepimagewm.how2j.cn/612.png" alt></p>
+<ol>
+<li>属性通常使用private封装起来</li>
+<li>方法一般使用public用于被调用</li>
+<li>会被子类继承的方法，通常使用protected</li>
+<li>package用的不多，一般新手会用package,因为还不知道有修饰符这个东西</li>
+</ol>
+<p>再就是<strong>作用范围最小原则</strong><br>简单说，能用private就用private，不行就放大一级，用package,再不行就用protected，最后用public。 这样就能把数据尽量的封装起来，没有必要露出来的，就不用露出来了</p>
+<h2 id="类属性"><a href="#类属性" class="headerlink" title="类属性"></a>类属性</h2><p>当一个属性被static修饰的时候，就叫做类属性，又叫做静态属性<br><strong>当一个属性被声明成类属性，那么所有的对象，都共享一个值</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String name; <span class="comment">//对象属性</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">float</span> hp;</span><br><span class="line">    <span class="keyword">static</span> String copyright;<span class="comment">//类属性,静态属性</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">           Hero garen =  <span class="keyword">new</span> Hero();</span><br><span class="line">           garen.name = <span class="string">"盖伦"</span>;</span><br><span class="line">           Hero.copyright = <span class="string">"版权由Riot Games公司所有"</span>; </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>访问类属性有两种方式<br><code>对象.类属性</code>　<code>garen.copyright</code><br><code>类.类属性</code>　<code>hero.copyright</code></p>
+<h2 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h2><p>类似于类属性</p>
+<p>访问一个对象方法，必须建立在有一个对象的前提的基础上<br>访问类方法，不需要对象的存在，直接就访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">battleWin</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"battle win"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>单例模式又叫做 Singleton模式，指的是一个类，<strong>在一个JVM里，只有一个实例存在</strong>。<br>public static的 getInstance方法，返回第静态属性</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//私有化构造方法使得该类无法在外部通过new 进行实例化</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">GiantDragon</span><span class="params">()</span></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//准备一个类属性，指向一个实例化对象。 因为是类属性，所以只有一个</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> GiantDragon instance = <span class="keyword">new</span> GiantDragon(); <span class="comment">//饿汉式直接创建，懒汉式只在getinstance时创建</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//public static getInstance 方法，提供给调用者获取1对象</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> GiantDragon <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> instance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h2><p>枚举enum是一种特殊的类(还是类)，使用枚举可以很方便的定义常量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Season &#123;</span><br><span class="line">	SPRING,SUMMER,AUTUMN,WINTER</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注：因为是常量，所以一般都是全大写</p>
+<h1 id="Chap-8-接口与继承"><a href="#Chap-8-接口与继承" class="headerlink" title="Chap 8 接口与继承"></a>Chap 8 接口与继承</h1><h2 id="创建接口"><a href="#创建接口" class="headerlink" title="创建接口"></a>创建接口</h2><p>创建一个接口 File-&gt;New-&gt;Interface</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AD</span> </span>&#123;</span><br><span class="line">        <span class="comment">//物理伤害</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">physicAttack</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实现接口"><a href="#实现接口" class="headerlink" title="实现接口"></a>实现接口</h2><p>实现在语法上使用关键字 implements</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ADHero</span> <span class="keyword">extends</span> <span class="title">Hero</span> <span class="keyword">implements</span> <span class="title">AD</span></span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">physicAttack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"进行物理攻击"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/10/04/java-01/" rel="next" title="java 基础（一）">
+                <i class="fa fa-chevron-left"></i> java 基础（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Sky</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chap-7-类和对象"><span class="nav-number">1.</span> <span class="nav-text">Chap 7 类和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">1.1.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">1.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重载"><span class="nav-number">1.3.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造方法"><span class="nav-number">1.4.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">1.5.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包"><span class="nav-number">1.6.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问修饰符"><span class="nav-number">1.7.</span> <span class="nav-text">访问修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类属性"><span class="nav-number">1.8.</span> <span class="nav-text">类属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类方法"><span class="nav-number">1.9.</span> <span class="nav-text">类方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单例模式"><span class="nav-number">1.10.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举类型"><span class="nav-number">1.11.</span> <span class="nav-text">枚举类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chap-8-接口与继承"><span class="nav-number">2.</span> <span class="nav-text">Chap 8 接口与继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建接口"><span class="nav-number">2.1.</span> <span class="nav-text">创建接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现接口"><span class="nav-number">2.2.</span> <span class="nav-text">实现接口</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sky</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

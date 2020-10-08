@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="大二是要学java的，暑期也简单接触过java，但是过了一两个月又忘记了。然后这几天重新学了下，基于的教程是 how2j.cn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java 基础（一）">
+<meta property="og:url" content="http://http://ztq1217.top/2020/10/04/java-01/index.html">
+<meta property="og:site_name" content="Sky&#39;blog">
+<meta property="og:description" content="大二是要学java的，暑期也简单接触过java，但是过了一两个月又忘记了。然后这几天重新学了下，基于的教程是 how2j.cn">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://stepimagewm.how2j.cn/513.png">
+<meta property="og:image" content="https://stepimagewm.how2j.cn/515.png">
+<meta property="og:image" content="https://stepimagewm.how2j.cn/1060.png">
+<meta property="og:image" content="https://stepimagewm.how2j.cn/600.png">
+<meta property="og:image" content="https://stepimagewm.how2j.cn/612.png">
+<meta property="og:updated_time" content="2020-10-08T07:13:49.141Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java 基础（一）">
+<meta name="twitter:description" content="大二是要学java的，暑期也简单接触过java，但是过了一两个月又忘记了。然后这几天重新学了下，基于的教程是 how2j.cn">
+<meta name="twitter:image" content="https://stepimagewm.how2j.cn/513.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://http://ztq1217.top/2020/10/04/java-01/">
+
+
+
+
+
+  <title>java 基础（一） | Sky'blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sky'blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-汇总">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-file"></i> <br>
+            
+            汇总
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://http://ztq1217.top/2020/10/04/java-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sky">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sky'blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java 基础（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-04T00:00:00+08:00">
+                2020-10-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>大二是要学java的，暑期也简单接触过java，但是过了一两个月又忘记了。<br>然后这几天重新学了下，基于的教程是 how2j.cn</p>
+<a id="more"></a>
+
+<h1 id="Chap-2-面向对象"><a href="#Chap-2-面向对象" class="headerlink" title="Chap 2 面向对象"></a>Chap 2 面向对象</h1><h2 id="设计“物品”这一个类，并创建几个对象。"><a href="#设计“物品”这一个类，并创建几个对象。" class="headerlink" title="设计“物品”这一个类，并创建几个对象。"></a>设计“物品”这一个类，并创建几个对象。</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Item</span> </span>&#123; </span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> price;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Item xueping = <span class="keyword">new</span> Item();</span><br><span class="line">		xueping.name = <span class="string">"血瓶"</span>;</span><br><span class="line">		xueping.price = <span class="number">50</span>;</span><br><span class="line">		</span><br><span class="line">		Item xueping = <span class="keyword">new</span> Item();</span><br><span class="line">		xueping.name = <span class="string">"草鞋"</span>;</span><br><span class="line">		xueping.price = <span class="number">300</span>;</span><br><span class="line"></span><br><span class="line">		Item xueping = <span class="keyword">new</span> Item();</span><br><span class="line">		xueping.name = <span class="string">"长剑"</span>;</span><br><span class="line">		xueping.price = <span class="number">350</span>;<span class="number">4</span></span><br><span class="line">    	&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建对象的方法：  类名称 对象名称 = new 类名称()</p>
+<h2 id="类可以有很多属性"><a href="#类可以有很多属性" class="headerlink" title="类可以有很多属性"></a>类可以有很多属性</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">	String name; <span class="comment">//姓名  </span></span><br><span class="line">	<span class="keyword">float</span> hp; <span class="comment">//血量 </span></span><br><span class="line">	<span class="keyword">float</span> armor; <span class="comment">//护甲 </span></span><br><span class="line">	<span class="keyword">int</span> moveSpeed; <span class="comment">//移动速</span></span><br><span class="line">	<span class="keyword">int</span> money; <span class="comment">//金钱</span></span><br><span class="line">	<span class="keyword">int</span> kill; <span class="comment">//击杀数</span></span><br><span class="line">	<span class="keyword">int</span> death; <span class="comment">//死亡次数</span></span><br><span class="line">	<span class="keyword">int</span> assist; <span class="comment">//助攻次数</span></span><br><span class="line">	String killWords; <span class="comment">//击杀后语音</span></span><br><span class="line">	String beKilledWords; <span class="comment">//被杀后语音</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类还可以有方法"><a href="#类还可以有方法" class="headerlink" title="类还可以有方法"></a>类还可以有方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">	String name; <span class="comment">//姓名</span></span><br><span class="line">	<span class="keyword">float</span> hp; <span class="comment">//血量</span></span><br><span class="line">	<span class="keyword">float</span> armor; <span class="comment">//护甲</span></span><br><span class="line">	<span class="keyword">int</span> moveSpeed; <span class="comment">//移动速度</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">legendary</span><span class="params">()</span></span>&#123;		<span class="comment">//超神，无返回类型</span></span><br><span class="line">		System.out.println(<span class="string">"超神了。"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">float</span> <span class="title">getHp</span><span class="params">()</span></span>&#123;		<span class="comment">//获取当前血量，返回float类型</span></span><br><span class="line">		<span class="keyword">return</span> hp;	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">recovery</span><span class="params">(<span class="keyword">float</span> blood)</span></span>&#123;	<span class="comment">//回血，无返回类型</span></span><br><span class="line">		hp = hp + blood;</span><br><span class="line">    	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Chap-3-变量"><a href="#Chap-3-变量" class="headerlink" title="Chap 3 变量"></a>Chap 3 变量</h1><p>Java中有八种基本类型，都是Java语言预先定义好的，并且是关键字。这八种基本类型分别是：<br>整型     （4种）byte short int long<br>字符型     （1种）char<br>浮点型     （2种）float double<br>布尔型    （1种）boolean</p>
+<p>感觉这几种跟C里面差不多。</p>
+<h2 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h2><p><img src="https://stepimagewm.how2j.cn/513.png" alt></p>
+<h2 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h2><p>长度：16位。<br>只能存放一个字符，并且用单引号表示</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c = <span class="string">'张'</span>;</span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'A'</span>;</span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'张天棋'</span>; <span class="comment">//错误用法</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h2><p><img src="https://stepimagewm.how2j.cn/515.png" alt><br><strong>默认的小数值是double类型的</strong><br><strong>所以想定义一个float类型的浮点数，最后在数字后面加一个f</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> f = <span class="number">12.123f</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h2><p>长度：1位。<br>用法很简单，就是要记住boolean怎么拼写。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> a = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">boolean</span> b = <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
+
+<p>虽然布尔型真正存放的数据是0(false) 1(true)<br>但是，不能直接使用0 1 进行赋值</p>
+<h2 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h2><p>String类型<strong>并不是基本类型</strong>，只是很常用。<br>String的变量创建之后就不能更改了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">"Hello Java"</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Chap-4-操作符"><a href="#Chap-4-操作符" class="headerlink" title="Chap 4 操作符"></a>Chap 4 操作符</h1><p>基础的操作符就不再写了。<br>记录几个没见过的操作符。</p>
+<h2 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h2><h3 id="长路与-和-短路与"><a href="#长路与-和-短路与" class="headerlink" title="长路与 和 短路与"></a>长路与 和 短路与</h3><p>跟一般的与一样，全真出真，有假出假。</p>
+<p>长路与（&amp;）     两侧的表达式，都会被运算。<br><strong>短路与（&amp;&amp;）     只要第一个是false，第二个就不进行运算了。</strong></p>
+<h3 id="长路或-和-短路或"><a href="#长路或-和-短路或" class="headerlink" title="长路或 和 短路或"></a>长路或 和 短路或</h3><p>跟一般的获一样，有真出真，全假出假。<br><strong>长路或（ | ） 两侧都会被运算</strong><br><strong>短路或（ || ） 只要第一个是true的，第二个就不进行运算了</strong></p>
+<h3 id="异或"><a href="#异或" class="headerlink" title="异或 ^"></a>异或 ^</h3><p>不同为真，相同为假。</p>
+<h1 id="Chap-5-控制流程"><a href="#Chap-5-控制流程" class="headerlink" title="Chap 5 控制流程"></a>Chap 5 控制流程</h1><p>主要是for、while、switch等语句。<br>用法跟C语言差不多，不重复写了。</p>
+<h1 id="Chap-6-数组"><a href="#Chap-6-数组" class="headerlink" title="Chap 6 数组"></a>Chap 6 数组</h1><h2 id="声明数组"><a href="#声明数组" class="headerlink" title="声明数组"></a>声明数组</h2><p>int[] a; 声明了一个数组变量。<br>也可以写成int a[]。<br>但是，仅仅是这一句声明，<strong>不会创建数组</strong>。</p>
+<h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">chap6</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//声明一个引用</span></span><br><span class="line">        <span class="keyword">int</span>[] a;</span><br><span class="line">        <span class="comment">//创建一个长度是5的数组，并且使用引用a指向该数组</span></span><br><span class="line">        a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] b = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>]; <span class="comment">//声明的同时，指向一个数组</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组长度"><a href="#数组长度" class="headerlink" title="数组长度"></a>数组长度</h2><p>可以用 数组名.length 获取到数组的长度.</p>
+<h2 id="赋值方法"><a href="#赋值方法" class="headerlink" title="赋值方法"></a>赋值方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">chap6</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//写法一： 分配空间同时赋值</span></span><br><span class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">100</span>,<span class="number">102</span>,<span class="number">444</span>,<span class="number">836</span>,<span class="number">3236</span>&#125;;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//写法二： 省略了new int[],效果一样</span></span><br><span class="line">        <span class="keyword">int</span>[] b = &#123;<span class="number">100</span>,<span class="number">102</span>,<span class="number">444</span>,<span class="number">836</span>,<span class="number">3236</span>&#125;;</span><br><span class="line">         </span><br><span class="line">        <span class="comment">//写法三：同时分配空间，和指定内容</span></span><br><span class="line">        <span class="comment">//在这个例子里，长度是3，内容是5个，产生矛盾了</span></span><br><span class="line">        <span class="comment">//所以如果指定了数组的内容，就不能同时设置数组的长度</span></span><br><span class="line">        <span class="keyword">int</span>[] c = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>]&#123;<span class="number">100</span>,<span class="number">102</span>,<span class="number">444</span>,<span class="number">836</span>,<span class="number">3236</span>&#125;;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="增强型for循环"><a href="#增强型for循环" class="headerlink" title="增强型for循环"></a>增强型for循环</h2><p><strong>增强型for循环只能用来取值，却不能用来修改数组里的值</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">chap6</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> values [] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">18</span>,<span class="number">62</span>,<span class="number">68</span>,<span class="number">82</span>,<span class="number">65</span>,<span class="number">9</span>&#125;;</span><br><span class="line">        <span class="comment">//增强型for循环遍历</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> each : values) &#123;</span><br><span class="line">            System.out.println(each);</span><br><span class="line">        &#125;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="复制数组"><a href="#复制数组" class="headerlink" title="复制数组"></a>复制数组</h2><p><strong>System.arraycopy(src, srcPos, dest, destPos, length)</strong></p>
+<p>src: 源数组<br>srcPos: 从源数组复制数据的起始位置<br>dest: 目标数组<br>destPos: 复制到目标数组的起始位置<br>length: 复制的长度</p>
+<p>Example:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">chap6</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a [] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">18</span>,<span class="number">62</span>,<span class="number">68</span>,<span class="number">82</span>,<span class="number">65</span>,<span class="number">9</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> b[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">        System.arraycopy(a, <span class="number">0</span>, b, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> b[][] = <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;</span><br><span class="line">   &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,</span><br><span class="line">   &#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;,</span><br><span class="line">   &#123;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h2><p>import java.util.Arrays;</p>
+<p>提供几个函数：</p>
+<h3 id="复制-copyOfRange"><a href="#复制-copyOfRange" class="headerlink" title="复制 copyOfRange"></a>复制 copyOfRange</h3><p>copyOfRange(int[] original, int from, int to)</p>
+<p>第一个参数表示源数组<br>第二个参数表示开始位置(取得到)<br>第三个参数表示结束位置(取不到)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//example:</span></span><br><span class="line"><span class="keyword">int</span>[] b = Arrays.copyOfRange(a, <span class="number">0</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="转化为字符串-toString"><a href="#转化为字符串-toString" class="headerlink" title="转化为字符串 toString()"></a>转化为字符串 toString()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//example</span></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">chap6</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[] = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">18</span>, <span class="number">62</span>, <span class="number">68</span>, <span class="number">82</span>, <span class="number">65</span>, <span class="number">9</span> &#125;;</span><br><span class="line">        String content = Arrays.toString(a);</span><br><span class="line">        System.out.println(content);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序 sort"></a>排序 sort</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//example</span></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">chap6</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[] = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">18</span>, <span class="number">62</span>, <span class="number">68</span>, <span class="number">82</span>, <span class="number">65</span>, <span class="number">9</span> &#125;;</span><br><span class="line">        Arrays.sort(a);</span><br><span class="line">        System.out.println(Arrays.toString(a));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="搜索-binarySearch"><a href="#搜索-binarySearch" class="headerlink" title="搜索 binarySearch"></a>搜索 binarySearch</h3><p><strong>使用binarySearch进行查找之前，必须使用sort进行排序</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">chap6</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[] = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">18</span>, <span class="number">62</span>, <span class="number">68</span>, <span class="number">82</span>, <span class="number">65</span>, <span class="number">9</span> &#125;;</span><br><span class="line"> </span><br><span class="line">        Arrays.sort(a);</span><br><span class="line"> </span><br><span class="line">        System.out.println(Arrays.toString(a));</span><br><span class="line">        <span class="comment">//使用binarySearch之前，必须先使用sort进行排序</span></span><br><span class="line">        System.out.println(<span class="string">"数字 62出现的位置:"</span>+Arrays.binarySearch(a, <span class="number">62</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://stepimagewm.how2j.cn/1060.png" alt></p>
+<h3 id="判断是否相同-equals"><a href="#判断是否相同-equals" class="headerlink" title="判断是否相同 equals"></a>判断是否相同 equals</h3><p>比较两个数组的内容是否一样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">chap6</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a[] = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">18</span>, <span class="number">62</span>, <span class="number">68</span>, <span class="number">82</span>, <span class="number">65</span>, <span class="number">9</span> &#125;;</span><br><span class="line">        <span class="keyword">int</span> b[] = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">18</span>, <span class="number">62</span>, <span class="number">68</span>, <span class="number">82</span>, <span class="number">65</span>, <span class="number">8</span> &#125;;</span><br><span class="line"> </span><br><span class="line">        System.out.println(Arrays.equals(a, b));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="填充-fill"><a href="#填充-fill" class="headerlink" title="填充 fill"></a>填充 fill</h3><p>使用同一个值，填充整个数组</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Arrays.fill(a, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="Chap-7-类和对象"><a href="#Chap-7-类和对象" class="headerlink" title="Chap 7 类和对象"></a>Chap 7 类和对象</h1><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>如果一个变量的类型是 类 类型，而非基本类型，那么该变量又叫做引用。<br><code>new Item()</code> 创建一个对象，但是这个对象访问不到，就像他没有名字一样。<br>此时需要一个变量代表(指向)这个对象，这就需要<code>Item money = new Item()</code></p>
+<p>一个对象可以有多个引用，就像一个人可以有很多代号，指向的都是同一个对象。<br><strong>一个引用，同一时间，只能指向一个对象。</strong></p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>设计一个类的时候，可以继承其他类的内容。<br>假设<code>Item</code>类有<code>name</code> <code>price</code>两个属性<br>我们可以设计一个<code>weapon</code>类继承`item·</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Weapon</span> <span class="keyword">extends</span> <span class="title">Item</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> damage; <span class="comment">//攻击力</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Weapon infinityEdge = <span class="keyword">new</span> Weapon();</span><br><span class="line">        infinityEdge.damage = <span class="number">65</span>; <span class="comment">//damage属性在类Weapon中新设计的</span></span><br><span class="line"></span><br><span class="line">        infinityEdge.name = <span class="string">"无尽之刃"</span>;<span class="comment">//name属性，是从Item中继承来的，就不需要重复设计了</span></span><br><span class="line">        infinityEdge.price = <span class="number">3600</span>;</span><br><span class="line">         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><p>方法的重载指的是<strong>方法名一样</strong>，但是<strong>参数类型不一样</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(name + <span class="string">" 进行了一次攻击 ，但是不确定打中谁了"</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero h1)</span> </span>&#123;</span><br><span class="line">    System.out.println(name + <span class="string">"对"</span> + h1.name + <span class="string">"进行了一次攻击 "</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero h1, Hero h2)</span> </span>&#123;</span><br><span class="line">    System.out.println(name + <span class="string">"同时对"</span> + h1.name + <span class="string">"和"</span> + h2.name + <span class="string">"进行了攻击 "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>参数数量是可变的，当有很多很多参数时，可以设计采用下面的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero... heros)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; heros.length; i++) &#123;</span><br><span class="line">        System.out.println(name + <span class="string">" 攻击了 "</span> + heros[i].name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><p>一般来说直接<code>Item money = new Item()</code>就能创建一个对象<br>此时<code>Item()</code>就是构造方法</p>
+<p>可以不带参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public Hero()&#123;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以带参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Item</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> money;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Item</span><span class="params">(String itemname)</span></span>&#123; </span><br><span class="line">               name = itemname;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Item wings = <span class="keyword">new</span> Item(<span class="string">"翅膀"</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>实际应用大概是直接通过参数赋初值。</p>
+<p>构造方法也可以重载，有多个参数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Item</span><span class="params">(String itemname,<span class="keyword">float</span> value)</span></span>&#123; </span><br><span class="line">    name = itemname;</span><br><span class="line">    price = value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>this即代表当前对象</p>
+<p>通过this访问属性，这样参数名可以跟属性名相同。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName3</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">    <span class="comment">//name代表的是方法中的参数name</span></span><br><span class="line">    <span class="comment">//this.name代表的是类中的name属性</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果要在一个构造方法中，调用另一个构造方法，可以使用this()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//带一个参数的构造方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Hero</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"一个参数的构造方法"</span>);</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//带两个参数的构造方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Hero</span><span class="params">(String name,<span class="keyword">float</span> hp)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>(name);</span><br><span class="line">    System.out.println(<span class="string">"两个参数的构造方法"</span>);</span><br><span class="line">    <span class="keyword">this</span>.hp = hp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看起来就像是套娃。</p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p>把比较接近的类，规划在同一个包下</p>
+<p><code>Hero</code>,<code>ADHero</code>规划在一个包，叫做<code>charactor(角色)</code><br><code>Item</code>,<code>Weapon</code>规划在另一个包下，叫做<code>property(道具)</code><br><img src="https://stepimagewm.how2j.cn/600.png" alt></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor; <span class="comment">//在最开始的地方声明该类所处于的包名</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">    String name; <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">float</span> hp; <span class="comment">//血量</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用其他包下的类，必须import</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor;</span><br><span class="line"><span class="comment">//Weapon类在其他包里，使用必须进行import</span></span><br><span class="line"><span class="keyword">import</span> property.Weapon;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">    String name; <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">float</span> hp; <span class="comment">//血量</span></span><br><span class="line">    <span class="keyword">float</span> armor; <span class="comment">//护甲</span></span><br><span class="line">    <span class="keyword">int</span> moveSpeed; <span class="comment">//移动速度</span></span><br><span class="line">    <span class="comment">//装备一把武器</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">equip</span><span class="params">(Weapon w)</span></span>&#123;</span><br><span class="line">      <span class="comment">//省略</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><p>成员变量有四种修饰符<br><code>private</code> 私有的<br><code>package/friendly/default</code> 不写<br><code>protected</code> 受保护的<br><code>public</code> 公共的</p>
+<p><font color="#ff0000">红色字体</font>，表示不可行<br><img src="https://stepimagewm.how2j.cn/612.png" alt></p>
+<ol>
+<li>属性通常使用private封装起来</li>
+<li>方法一般使用public用于被调用</li>
+<li>会被子类继承的方法，通常使用protected</li>
+<li>package用的不多，一般新手会用package,因为还不知道有修饰符这个东西</li>
+</ol>
+<p>再就是<strong>作用范围最小原则</strong><br>简单说，能用private就用private，不行就放大一级，用package,再不行就用protected，最后用public。 这样就能把数据尽量的封装起来，没有必要露出来的，就不用露出来了</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/10/01/jsp-01/" rel="next" title="jsp学习">
+                <i class="fa fa-chevron-left"></i> jsp学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/10/05/java-02/" rel="prev" title="java 基础（二）">
+                java 基础（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Sky</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chap-2-面向对象"><span class="nav-number">1.</span> <span class="nav-text">Chap 2 面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设计“物品”这一个类，并创建几个对象。"><span class="nav-number">1.1.</span> <span class="nav-text">设计“物品”这一个类，并创建几个对象。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类可以有很多属性"><span class="nav-number">1.2.</span> <span class="nav-text">类可以有很多属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类还可以有方法"><span class="nav-number">1.3.</span> <span class="nav-text">类还可以有方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chap-3-变量"><span class="nav-number">2.</span> <span class="nav-text">Chap 3 变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#整型"><span class="nav-number">2.1.</span> <span class="nav-text">整型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符型"><span class="nav-number">2.2.</span> <span class="nav-text">字符型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮点型"><span class="nav-number">2.3.</span> <span class="nav-text">浮点型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#布尔型"><span class="nav-number">2.4.</span> <span class="nav-text">布尔型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String类型"><span class="nav-number">2.5.</span> <span class="nav-text">String类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chap-4-操作符"><span class="nav-number">3.</span> <span class="nav-text">Chap 4 操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑操作符"><span class="nav-number">3.1.</span> <span class="nav-text">逻辑操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#长路与-和-短路与"><span class="nav-number">3.1.1.</span> <span class="nav-text">长路与 和 短路与</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#长路或-和-短路或"><span class="nav-number">3.1.2.</span> <span class="nav-text">长路或 和 短路或</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异或"><span class="nav-number">3.1.3.</span> <span class="nav-text">异或 ^</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chap-5-控制流程"><span class="nav-number">4.</span> <span class="nav-text">Chap 5 控制流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chap-6-数组"><span class="nav-number">5.</span> <span class="nav-text">Chap 6 数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#声明数组"><span class="nav-number">5.1.</span> <span class="nav-text">声明数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数组"><span class="nav-number">5.2.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组长度"><span class="nav-number">5.3.</span> <span class="nav-text">数组长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值方法"><span class="nav-number">5.4.</span> <span class="nav-text">赋值方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增强型for循环"><span class="nav-number">5.5.</span> <span class="nav-text">增强型for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制数组"><span class="nav-number">5.6.</span> <span class="nav-text">复制数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维数组"><span class="nav-number">5.7.</span> <span class="nav-text">二维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arrays类"><span class="nav-number">5.8.</span> <span class="nav-text">Arrays类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#复制-copyOfRange"><span class="nav-number">5.8.1.</span> <span class="nav-text">复制 copyOfRange</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转化为字符串-toString"><span class="nav-number">5.8.2.</span> <span class="nav-text">转化为字符串 toString()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序-sort"><span class="nav-number">5.8.3.</span> <span class="nav-text">排序 sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索-binarySearch"><span class="nav-number">5.8.4.</span> <span class="nav-text">搜索 binarySearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#判断是否相同-equals"><span class="nav-number">5.8.5.</span> <span class="nav-text">判断是否相同 equals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#填充-fill"><span class="nav-number">5.8.6.</span> <span class="nav-text">填充 fill</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chap-7-类和对象"><span class="nav-number">6.</span> <span class="nav-text">Chap 7 类和对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#引用"><span class="nav-number">6.1.</span> <span class="nav-text">引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">6.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重载"><span class="nav-number">6.3.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造方法"><span class="nav-number">6.4.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#this"><span class="nav-number">6.5.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包"><span class="nav-number">6.6.</span> <span class="nav-text">包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问修饰符"><span class="nav-number">6.7.</span> <span class="nav-text">访问修饰符</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sky</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
