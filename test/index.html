@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="https://html.konghai.me/chayou/xiu/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://html.konghai.me/chayou/xiu/css/style.css">
+    <script type="text/javascript" src="https://html.konghai.me/chayou/xiu/js/jquery.js"></script>
+    <script type="text/javascript">
+        new function (){
+            var _self = this;
+            _self.width = 640;//设置默认最大宽度
+            _self.fontSize = 100;//默认字体大小
+            _self.widthProportion = function(){var p = (document.body&&document.body.clientWidth||document.getElementsByTagName("html")[0].offsetWidth)/_self.width;return p>1?1:p<0.32?0.32:p;};
+            _self.changePage = function(){
+                document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+_self.widthProportion()*_self.fontSize+"px !important");
+            }
+            _self.changePage();
+            window.addEventListener('resize',function(){_self.changePage();},false);
+        };
+    </script>
+</head>
+<body>
+<div class="indexWarp">
+    <div class="banner"><img src="https://html.konghai.me/chayou/xiu/images/x_02.jpg"></div>
+    <div class="banner"><img src="https://html.konghai.me/chayou/xiu/images/x_03.jpg"></div>
+    <div class="banner">
+        <img src="https://html.konghai.me/chayou/xiu/images/index_03.jpg">
+        <div class="jd">
+            <div class="jd_box"></div>
+            <div class="time">
+                当前时间: <span class="year"></span>-<span class="moth"></span>-<span class="day"></span> <span class="hours"></span>:<span class="min"></span>:<span class="sec"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="textWarp">
+        <div class="text">
+            <div class="left" style="width: 1.45rem;">请假类型：</div>
+            <div class="right" style="width: calc(100% - 1.45rem);">
+                <input style="width:1.95rem;" type="text" name id value="事假">
+                <span>需要离校：</span>
+                <input type="text" name id value="离校">
+            </div>
+        </div>
+        <div class="text">
+            <div class="left" style="width: 1.45rem;">销假规则：</div>
+            <div class="right" style="width:calc(100% - 1.45rem);">
+                <input style="width: 100%; color: #f5ae2a;" type="text" value="离校请假需要销假，非离校请假无需销假">
+                <a href>查看></a>
+            </div>
+        </div>
+        <div class="text">
+            <div class="left">实际休假时间：</div>
+            <div class="right"><input type="text" name id value="-"></div>
+        </div>
+    </div>
+    <div class="tit">请假详情</div>
+    <div class="textWarp" style="margin-bottom: 20px;">
+        <h2>我的请假申请</h2>
+        <div class="text">
+            <div class="left" style="width: 1.75rem;">开始时间：</div>
+            <div class="right"><input type="text" value="11-07 12:00"></div>
+        </div>
+        <div class="text">
+            <div class="left" style="width: 1.75rem;">结束时间：</div>
+            <div class="right"><input type="text" value="11-08 21:00"></div>
+        </div>
+        <div class="text">
+            <div class="left" style="width: 1.75rem;">审批流程：</div>
+            <div class="right"><input style=" width: .8rem;" type="text" value="共2步"><a href>查看></a></div>
+        </div>
+        <div class="text">
+            <div class="left" style="width: 1.75rem;">紧急联系人：</div>
+            <div class="right"><input type="text" value="13855560117"></div>
+        </div>
+        <div class="text">
+            <div class="left" style="width: 1.75rem;">请假原因：</div>
+            <div class="right"><input type="text" value="家里有事，需要回去"></div>
+        </div>
+        <div class="text">
+            <div class="left" style="width: 1.75rem;">发起位置：</div>
+            <div class="right"><input style="color: #3095d6;" type="text" value="中国安徽省合肥市瑶海区学府路"></div>
+        </div>
+        <div class="text">
+            <div class="left" style="width: 1.75rem;">抄送人：</div>
+            <div class="right"><input type="text" value="无"></div>
+        </div>
+    </div>
+    <div class="list">
+        <h2>审批状态</h2>
+        <div class="list_box">
+            <ul>
+                <li>
+                    <span style="border: .03rem solid #467ba4;"></span>
+                    <input class="left" type name id value="杨杰翔 - 发起申请">
+                    <input class="right" type name id value="09-28 10:30">
+                </li>
+                <li>
+                    <span style="border: .03rem solid #40a587;"></span>
+                    <input class="left" type name id value="一级:[辅导员]梁甦晨-审批"><p>通过</p>
+                    <input class="right" type name id value="09-28 11:15">
+                </li>
+                <li>
+                    <span style="border: .03rem solid #40a587;"></span>
+                    <input class="left" type name id value="二级:[院级管理员]尹景松-审批"><p>通过</p>
+                    <input class="right" type name id value="09-28 11:15">
+                </li>
+            </ul>
+        </div>
+
+        <h3><input type="text" name id value="审批意见:无"></h3>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function() {
+        var time=setInterval(function(){
+            var myDate = new Date;
+            var year = myDate.getFullYear(); //获取当前年
+            var mon = myDate.getMonth() + 1; //获取当前月
+            var date = myDate.getDate(); //获取当前日
+            var h = myDate.getHours();//获取当前小时数(0-23)
+            var m = myDate.getMinutes();//获取当前分钟数(0-59)
+            var s = myDate.getSeconds();//获取当前秒
+
+            $('.year').html(year);
+            $('.moth').html(mon);
+            $('.day').html(date);
+            $('.hours').html(h);
+            $('.min').html(m);
+            $('.sec').html(s);
+        },1000)
+
+
+    })
+</script>
