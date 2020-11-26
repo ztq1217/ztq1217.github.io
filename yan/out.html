@@ -1,0 +1,193 @@
+<html lang="en" class="pixel-ratio-2 retina android android-6 android-6-0">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>出校申请</title>
+    <link rel="stylesheet" href="https://students.demoo.com.cn/htmlstatic/plug/weuix/css/weui.css">
+    <link rel="stylesheet" href="https://students.demoo.com.cn/htmlstatic/plug/weuix/css/weuix.css">
+    <link rel="stylesheet" href="https://students.demoo.com.cn/htmlstatic/plug/weuix/css/common.css">
+    <script src="https://students.demoo.com.cn/htmlstatic/plug/jquery2.1.4/jquery.min.js"></script>
+    <script src="https://students.demoo.com.cn/htmlstatic/plug/jquery.validate.min.js"></script>
+    <script src="https://students.demoo.com.cn/htmlstatic/plug/jquery.form.min.js"></script>
+    <script src="https://students.demoo.com.cn/htmlstatic/plug/weuix/js/zepto.min.js"></script>
+    <script src="https://students.demoo.com.cn/htmlstatic/plug/weuix/js/zepto.weui.js"></script>
+    <script src="https://students.demoo.com.cn/htmlstatic/plug/weuix/js/php.js"></script>
+    <script src="https://students.demoo.com.cn/htmlstatic/plug/weuix/js/picker.city.js"></script>
+    <script>
+        var flag = 1;
+    </script>
+    <style type="text/css">
+        @font-face {
+            font-family: "element-icons";
+            src: url('chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.woff') format('woff'),
+                url('chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.ttf ') format('truetype');
+            /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="popout"></div>
+    <div id="mask"></div>
+    <div id="navigation"></div>
+    <div id="content">
+        <style>
+            .countdown-2 {
+                font-size: 20px;
+                color: red;
+                margin-top: 20px;
+            }
+        </style>
+        <script>
+            function datetime() {
+                //创建日期时间对象
+                var datetime = new Date();
+                //获取组件
+                var month = datetime.getMonth() + 1;
+                var day = datetime.getDate();
+                var hour = datetime.getHours();
+                var minute = datetime.getMinutes();
+                var second = datetime.getSeconds();
+                if (hour < 10) {
+                    var hour = 0 + "" + hour;
+                }
+                if (minute < 10) {
+                    var minute = 0 + "" + minute;
+                }
+                if (second < 10) {
+                    var second = 0 + "" + second;
+                }
+                var nowDate = month + "月" + day + "日";
+                var nowTime = hour + ":" + minute + ":" + second;
+		var backtime = "凭证启用：2020-" + month + "-" + day + " " + hour + ":" + minute + ":" + second
+                //更新内容
+		if (flag) {
+                    $(".backdate-wrap").html(backtime);
+                    flag = 0;
+                }
+                $(".date-wrap").html(nowDate);
+                $(".time-wrap").html(nowTime);
+            }
+
+            setInterval(datetime, 1000);
+            $(function () {
+                var m = 2;
+                var s = 59;
+                var timer = setInterval(function () {
+                    if (m == 0 && s == 0) {
+                        clearInterval(timer);
+                        window.location.href = "/wap/plug/slak";
+                    }
+                    if (s < 10) {
+                        //如果秒数少于10在前面加上0
+                        $('.countdown').html(m + '分0' + s + '秒');
+                    } else {
+                        $('.countdown').html(m + '分' + s + '秒');
+                    }
+                    s--;
+                    if (s < 0) {
+                        //如果秒数少于0就变成59秒
+                        s = 59;
+                        m--;
+                    }
+                }, 1000)
+            })
+        </script>
+        <div class="weui-tab" style="height:auto;">
+            <div>
+                <img style="width: 100%" src="http://47.111.235.200:8080/images/out.png"
+                    alt="">
+            </div>
+            <div class="temp-box">
+                <div class="top-bg"></div>
+                <div class="Qrcode-wrap">
+                    <div class="container">
+                        <div class="cur-time">
+                            <h1 class="date-wrap" style="font-size: 40px">6月6日</h1>
+                            <h1 class="time-wrap" style="font-size: 48px;margin-top: 20px">10:33:37</h1>
+                        </div>
+                        <div class="Qrcode-msg">
+                            <h3>姓名:张天棋</h3>
+                            <h3>学号:1912190217</h3>
+                            <div style="text-align: center;margin-top: 10px">
+                                <!--?xml version="1.0" encoding="UTF-8"?-->
+
+
+<script src="qrcode.js"></script>
+<div id="qrcode">
+</div>
+<script>
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width : 200,//设置宽高
+        height : 200,
+    colorDark : "#eeeeee",
+    colorLight : "#006633"
+    });
+                //创建日期时间对象
+                var datetime = new Date();
+                //获取组件
+                var month = datetime.getMonth() + 1;
+                var day = datetime.getDate();
+                var hour = datetime.getHours();
+                var minute = datetime.getMinutes();
+                var second = datetime.getSeconds();
+                if (hour < 10) {
+                    var hour = 0 + "" + hour;
+                }
+                if (minute < 10) {
+                    var minute = 0 + "" + minute;
+                }
+                if (second < 10) {
+                    var second = 0 + "" + second;
+                }
+                if (month < 10) {
+                    var month =  "0" + month;
+                }
+                if (day < 10) {
+                    var day =  "0" + day;
+                }
+    var a="6fc2fadf-eabb-4eab-9a50-4d36b46c2a11-张天棋-2020-"+ month + "-" + day + " " + hour + ":" + minute + ":" + second+"-出校码有效";
+    qrcode.makeCode(a);
+</script>
+
+
+
+
+
+                            </div>
+                            <h4 style="color: yellowgreen"  class="backdate-wrap"></h4>
+                            <p class="countdown">3分0秒</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function sureback(id) {
+                $.confirm("确认返校后，进校码将完全失效。", "确认已返回学校？", function () {
+                    //发送进校申请
+                    $.post('/wap/plug/slak/sureback/' + id, {
+                        _token: 'YW6QfXLdLhyfcdpKGsUtT6bKxjNYhombFVtxpy3R',
+                        _method: 'PUT'
+                    }, function (res) {
+                        if (res.code == 1) {
+                            $.alert(res.msg, function () {
+                                window.location.href = "/wap/plug/slak";
+                            })
+                        } else {
+                            $.alert(res.msg)
+                        }
+                    })
+                }, function () {
+                    //取消操作
+                });
+            }
+        </script>
+
+    </div>
+
+
+</body>
+
+</html>
