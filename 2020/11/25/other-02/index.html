@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="可能只需要记住mvn package这一个吧？">
+<meta name="description" content="连接简单，linux命令倒忘了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="maven个人向使用方法">
-<meta property="og:url" content="http://ztq1217.top/2020/10/08/mvn-01/index.html">
+<meta property="og:title" content="windows连接linux服务器">
+<meta property="og:url" content="http://ztq1217.top/2020/11/25/other-02/index.html">
 <meta property="og:site_name" content="Sky&#39;blog">
-<meta property="og:description" content="可能只需要记住mvn package这一个吧？">
+<meta property="og:description" content="连接简单，linux命令倒忘了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-10-26T02:28:20.294Z">
+<meta property="og:image" content="http://ztq1217.top/img/xshell.png">
+<meta property="og:updated_time" content="2020-12-05T14:45:04.378Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="maven个人向使用方法">
-<meta name="twitter:description" content="可能只需要记住mvn package这一个吧？">
+<meta name="twitter:title" content="windows连接linux服务器">
+<meta name="twitter:description" content="连接简单，linux命令倒忘了">
+<meta name="twitter:image" content="http://ztq1217.top/img/xshell.png">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://ztq1217.top/2020/10/08/mvn-01/">
+  <link rel="canonical" href="http://ztq1217.top/2020/11/25/other-02/">
 
 
 
 
 
-  <title>maven个人向使用方法 | Sky'blog</title>
+  <title>windows连接linux服务器 | Sky'blog</title>
   
 
 
@@ -232,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ztq1217.top/2020/10/08/mvn-01/">
+    <link itemprop="mainEntityOfPage" href="http://ztq1217.top/2020/11/25/other-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sky">
@@ -249,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">maven个人向使用方法</h1>
+          <h1 class="post-title" itemprop="name headline">windows连接linux服务器</h1>
         
 
         <div class="post-meta">
@@ -261,8 +263,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-08T00:00:00+08:00">
-                2020-10-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-11-25T00:00:00+08:00">
+                2020-11-25
               </time>
             
 
@@ -271,28 +273,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/maven/" itemprop="url" rel="index">
-                    <span itemprop="name">maven</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -321,82 +301,10 @@
       
 
       
-        <p>可能只需要记住mvn package这一个吧？</p>
+        <p>连接简单，linux命令倒忘了</p>
 <a id="more"></a>
-<h1 id="配置相关"><a href="#配置相关" class="headerlink" title="配置相关"></a>配置相关</h1><p>需要建一个变量名为 <code>M2_HOME</code> 的环境变量，变量值是maven的安装地址。<br>还要建一个变量名为 <code>PATH</code> 的环境变量，变量值是可以使用<code>%M2_HOME%\bin</code></p>
-<p>安装完成后可在cmd里输入<code>mvn -v</code>10:27 2020/10/12检查是否配置成功。</p>
-<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>在cmd中通过<code>cd</code>进入目标目录<br>执行<code>mvn package</code></p>
-<p>之后可以在target目录下找到生成的文件。</p>
-<p>pom.xml设置<br>java文件：<code>&lt;packaging&gt;jar&lt;/packaging&gt;</code><br>web文件：<code>&lt;packaging&gt;war&lt;/packaging&gt;</code></p>
-<h1 id="目录说明"><a href="#目录说明" class="headerlink" title="目录说明"></a>目录说明</h1><table>
-<thead>
-<tr>
-<th align="center">java项目目录名称</th>
-<th align="center">目录说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">src</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">src/main</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><strong>src/main/java</strong></td>
-<td align="center"><strong>存放java源文件</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>target</strong></td>
-<td align="center"><strong>打包结果存放处</strong></td>
-</tr>
-<tr>
-<td align="center">target/class</td>
-<td align="center">编译生成的class文件</td>
-</tr>
-<tr>
-<td align="center">target/maven-archiver</td>
-<td align="center">打包所需的配置文件</td>
-</tr>
-<tr>
-<td align="center">pom.xml</td>
-<td align="center">maven工程的配置文件</td>
-</tr>
-</tbody></table>
-<p>建立与包名对应的目录文件。<br>比如包为<code>package com.family168.maven2book.ch02;</code><br>则java源文件应放在<br>src/main/java/com/family168/maven2book/ch02/*.java</p>
-<table>
-<thead>
-<tr>
-<th align="center">web项目目录名称</th>
-<th align="center">目录说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">src</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">src/main</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center">src/main/webapp</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td align="center"><strong>src/main/WEB-INF</strong></td>
-<td align="center"><strong>存放web源文件</strong></td>
-</tr>
-<tr>
-<td align="center"><strong>target</strong></td>
-<td align="center"><strong>打包结果存放处</strong></td>
-</tr>
-<tr>
-<td align="center">pom.xml</td>
-<td align="center">maven工程的配置文件</td>
-</tr>
-</tbody></table>
+<h2 id="windows系统下"><a href="#windows系统下" class="headerlink" title="windows系统下"></a>windows系统下</h2><p>使用Xshell软件连接服务器<br>输入相关参数、用户名密码完成连接</p>
+<p><img src="/img/xshell.png" alt></p>
 
       
     </div>
@@ -421,8 +329,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/10/05/java-02/" rel="next" title="java 基础（二）">
-                <i class="fa fa-chevron-left"></i> java 基础（二）
+              <a href="/2020/11/25/other-01/" rel="next" title="满意度系统相关">
+                <i class="fa fa-chevron-left"></i> 满意度系统相关
               </a>
             
           </div>
@@ -431,8 +339,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/11/25/other-01/" rel="prev" title="满意度系统相关">
-                满意度系统相关 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/12/05/nginx-01/" rel="prev" title="nginx相关">
+                nginx相关 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -556,7 +464,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#配置相关"><span class="nav-number">1.</span> <span class="nav-text">配置相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用方法"><span class="nav-number">2.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目录说明"><span class="nav-number">3.</span> <span class="nav-text">目录说明</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#windows系统下"><span class="nav-number">1.</span> <span class="nav-text">windows系统下</span></a></li></ol></div>
             
 
           </div>
