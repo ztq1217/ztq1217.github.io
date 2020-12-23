@@ -10,27 +10,31 @@
         }
         .info{
             position: absolute;
-            top: 10%;
+            top: 5%;
             left: 5%;
             border-radius: 15px;b
             text-align: center;
-            width: 20%;
-            height: 40%;
+            width: 90%;
+            height: 41%;
             background-color: #FFFFFF;
             border: 5px solid ;
         }
         .infoimg {
             text-align: center;
         }
+        .upinfotext {
+            text-align: center;
+            margin-left: 20%;
+        }
         .infotext {
             text-align: left;
-            margin-left: 15%;
         }
         .title{
             margin-top: 10px;
             font-size: 50px;
             height: 80px;
-            margin-left: 1%;
+            text-align: center;
+
         }
         .posting{
             text-align: left;
@@ -39,20 +43,20 @@
         }
         .comment{
             position: absolute;
-            top: 10%;
-            left: 28%;
+            top: 55%;
+            left: 5%;
             border-radius: 15px;
             text-align: left;
-            width: 65%;
-            height: 40%;
+            width: 90%;
+            height: 60%;
             background-color: #FFFFFF;
             border: 5px solid ;
         }
         textarea{
             margin-top: 5px;
             font-size: 14px;
-            width: 98%;
-            height: 52%;
+            width: 96%;
+            height: 32%;
             margin-left: 1%;
             border-radius: 3px;
             border: 2px solid ;
@@ -73,14 +77,19 @@
             border: 2px solid ;
         }
         .tijiao{
-            position: absolute;
-            top: 10%;
-            left: 78%;
-            width: 20%;
-            height: 20%;
-            font-size: 30px;
+            display:block;
+            margin:0 auto;
+            width: 80%;
+            height: 10%;
+            font-size: 20px;
             border-radius: 3px;
             border: 2px solid ;
+        }
+        input{
+            width: 60%;;
+            margin-top: 10px;
+            border: 2px  solid;
+            background-color: #E1FFFF;
         }
     </style>
     <script src="js/jquery.min.js"></script>
@@ -97,24 +106,30 @@
 </head>
 
 <body bgcolor="#20B2AA">
+
         <div class="info">
             <h4 class="title">个人信息</h4>
             <div class="infoimg"><img src="123.jpg" width="60" hight="60"></div>
-            <div class="infotext">
-                姓　　名：　浙小商<br>
-                学　　院：　计算机学院<br>
-                班　　级：　软件1901<br>
-                请假次数：　0 / 10<br>
+            <div class="upinfotext">
+               <div class="infotext">
+                姓　　名：浙小商<br>
+                学　　院：计算机学院<br>
+                班　　级：软件1901<br>
+                请假次数：0 / 10<br>
+               </div>
             </div>
+        </div>
         </div>
         <div class="comment">
             <h4 class="title">请假单填写</h4>
-            <button id="tijiao" class="tijiao">提交</button>
-            <span font-size="14px">请假时间：</span>
-            <input type="datetime-local" name="name">　至
-            <input type="datetime-local" name="name">
+            <span font-size="14px">　离校时间：</span>
+            <input type="datetime-local" name="name"><br>
+            <span font-size="14px">　返校时间：</span>
+            <input width: 80%; type="datetime-local" name="name"><br>
+            <span font-size="14px">　请详细填写请假理由：</span>
             <textarea align="center"></textarea>
+            <button id="tijiao" class="tijiao">提交</button>
         </div>
-
+        <div></div>
 </body>
 </html>
