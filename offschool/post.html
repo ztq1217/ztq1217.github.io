@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimun-scale=1.0,user-scalable=no"/>
+    <title>发起请假</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .info{
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            border-radius: 15px;b
+            text-align: center;
+            width: 20%;
+            height: 40%;
+            background-color: #FFFFFF;
+            border: 5px solid ;
+        }
+        .infoimg {
+            text-align: center;
+        }
+        .infotext {
+            text-align: left;
+            margin-left: 15%;
+        }
+        .title{
+            margin-top: 10px;
+            font-size: 50px;
+            height: 80px;
+            margin-left: 1%;
+        }
+        .posting{
+            text-align: left;
+            margin-left: 5%;
+            background-color: #FFFFFF;
+        }
+        .comment{
+            position: absolute;
+            top: 10%;
+            left: 28%;
+            border-radius: 15px;
+            text-align: left;
+            width: 65%;
+            height: 40%;
+            background-color: #FFFFFF;
+            border: 5px solid ;
+        }
+        textarea{
+            margin-top: 5px;
+            font-size: 14px;
+            width: 98%;
+            height: 52%;
+            margin-left: 1%;
+            border-radius: 3px;
+            border: 2px solid ;
+        }
+        span{
+            margin-top: 3px;
+            font-size: 14px;
+            width: 98%;
+            height: 52%;
+            margin-left: 1%;
+        }
+        input{
+            margin-top: 3px;
+            font-size: 14px;
+            width: 15%;
+            margin-left: 1%;
+            border-radius: 3px;
+            border: 2px solid ;
+        }
+        .tijiao{
+            position: absolute;
+            top: 10%;
+            left: 78%;
+            width: 20%;
+            height: 20%;
+            font-size: 30px;
+            border-radius: 3px;
+            border: 2px solid ;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+                function addPost(){
+
+                }
+                $(function(){
+                    $("#tijiao").focus(function(){
+                        alert("提交了");
+                    });
+                });
+    </script>
+</head>
+
+<body bgcolor="#20B2AA">
+        <div class="info">
+            <h4 class="title">个人信息</h4>
+            <div class="infoimg"><img src="123.jpg" width="60" hight="60"></div>
+            <div class="infotext">
+                姓　　名：　浙小商<br>
+                学　　院：　计算机学院<br>
+                班　　级：　软件1901<br>
+                请假次数：　0 / 10<br>
+            </div>
+        </div>
+        <div class="comment">
+            <h4 class="title">请假单填写</h4>
+            <button id="tijiao" class="tijiao">提交</button>
+            <span font-size="14px">请假时间：</span>
+            <input type="datetime-local" name="name">　至
+            <input type="datetime-local" name="name">
+            <textarea align="center"></textarea>
+        </div>
+
+</body>
+</html>
